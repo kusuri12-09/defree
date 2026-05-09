@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-900 text-slate-100 font-sans antialiased overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-glass-light backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+  .glass-panel-dark {
+    @apply bg-glass-dark backdrop-blur-xl border border-white/5 shadow-2xl;
+  }
+}
