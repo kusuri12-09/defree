@@ -53,3 +53,5 @@ firebase-debug.log
 # Uploads (로컬 테스트용 임시 파일)
 uploads/
 tmp/
+
+*.local.*
