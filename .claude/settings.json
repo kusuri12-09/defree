@@ -10,10 +10,7 @@
       "Bash(git commit*)",
       "Bash(find*)"
     ],
-    "deny": [
-      "Bash(git push*)",
-      "Bash(rm -rf*)"
-    ]
+    "deny": ["Bash(git push*)", "Bash(rm -rf*)"]
   },
   "language": "korean",
   "effortLevel": "medium",

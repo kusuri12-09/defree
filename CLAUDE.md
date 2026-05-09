@@ -97,13 +97,13 @@ apps/api/src/
 
 각 모듈은 아래 레이어를 따른다:
 
-| 레이어 | 파일 | 역할 |
-|--------|------|------|
-| Controller | `*.controller.ts` | HTTP 요청/응답, DTO 검증 |
-| Service | `*.service.ts` | 비즈니스 로직 |
-| Repository | `*.repository.ts` | DB 접근 (TypeORM) |
-| Entity | `*.entity.ts` | DB 테이블 매핑 (DDD 엔티티) |
-| DTO | `dto/*.dto.ts` | 요청/응답 데이터 형식 |
+| 레이어     | 파일              | 역할                        |
+| ---------- | ----------------- | --------------------------- |
+| Controller | `*.controller.ts` | HTTP 요청/응답, DTO 검증    |
+| Service    | `*.service.ts`    | 비즈니스 로직               |
+| Repository | `*.repository.ts` | DB 접근 (TypeORM)           |
+| Entity     | `*.entity.ts`     | DB 테이블 매핑 (DDD 엔티티) |
+| DTO        | `dto/*.dto.ts`    | 요청/응답 데이터 형식       |
 
 - Controller는 Service만 호출한다. Repository를 직접 호출하지 않는다.
 - Service는 도메인 로직을 포함하며 다른 모듈의 Service를 주입받을 수 있다.
@@ -124,14 +124,14 @@ apps/api/src/
 
 ### 외부 서비스 연동
 
-| 서비스 | 용도 | 패키지 위치 |
-|--------|------|-------------|
-| Naver Clova OCR | 영수증 텍스트 추출 | `packages/ocr` |
-| OpenAI GPT (gpt-4o-mini) | 비정형 상품명 → 표준 품목명 정규화 | `packages/ocr` |
-| 만개의 레시피 API | 재료 기반 레시피 검색 | `apps/api` |
-| YouTube Data API | 레시피 영상 연동 | `apps/api` |
-| Discord / Slack Webhook | 알림 발송 | `packages/notification` |
-| FCM (Firebase) | Web Push 알림 | `packages/notification` |
+| 서비스                   | 용도                               | 패키지 위치             |
+| ------------------------ | ---------------------------------- | ----------------------- |
+| Naver Clova OCR          | 영수증 텍스트 추출                 | `packages/ocr`          |
+| OpenAI GPT (gpt-4o-mini) | 비정형 상품명 → 표준 품목명 정규화 | `packages/ocr`          |
+| 만개의 레시피 API        | 재료 기반 레시피 검색              | `apps/api`              |
+| YouTube Data API         | 레시피 영상 연동                   | `apps/api`              |
+| Discord / Slack Webhook  | 알림 발송                          | `packages/notification` |
+| FCM (Firebase)           | Web Push 알림                      | `packages/notification` |
 
 ---
 
@@ -237,9 +237,9 @@ AWS_SECRET_ACCESS_KEY=
 
 ## 참고 문서
 
-| 문서 | 경로 |
-|------|------|
-| 서비스 기획안 | `document/01_서비스_기획안.md` |
-| UI/UX 디자인 명세 | `document/02_UIUX_디자인_명세.md` |
+| 문서              | 경로                               |
+| ----------------- | ---------------------------------- |
+| 서비스 기획안     | `document/01_서비스_기획안.md`     |
+| UI/UX 디자인 명세 | `document/02_UIUX_디자인_명세.md`  |
 | 데이터베이스 설계 | `document/03_데이터베이스_설계.md` |
-| API 명세 | `document/04_API_명세.md` |
+| API 명세          | `document/04_API_명세.md`          |
