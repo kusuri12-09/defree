@@ -48,8 +48,7 @@ export class ReceiptsController {
         code: 'IMAGE_REQUIRED',
         message: '이미지 파일이 필요합니다.',
       })
-    // TODO: S3 업로드 → Clova OCR → GPT 정규화 파이프라인 연동
-    const receipt = await this.service.createScanEntry(user.id, `placeholder/${file.originalname}`)
+    const receipt = await this.service.scanReceipt(user.id, file)
     return { receiptId: receipt.id, status: receipt.status, scannedAt: receipt.scannedAt }
   }
 

@@ -41,6 +41,14 @@ export class ReceiptsRepository {
     return this.itemRepo.find({ where: { receiptId } })
   }
 
+  findItemByIdAndReceiptId(id: string, receiptId: string) {
+    return this.itemRepo.findOne({ where: { id, receiptId } })
+  }
+
+  deleteItemsByReceiptId(receiptId: string) {
+    return this.itemRepo.delete({ receiptId })
+  }
+
   saveItems(items: ReceiptItem[]) {
     return this.itemRepo.save(items)
   }

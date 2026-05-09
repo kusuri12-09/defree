@@ -23,6 +23,7 @@ export const validationSchema = Joi.object({
   CLOVA_OCR_API_KEY: Joi.string().optional(),
   CLOVA_OCR_INVOKE_URL: Joi.string().optional(),
   OPENAI_API_KEY: Joi.string().optional(),
+  OPENAI_MODEL: Joi.string().default('gpt-4o-mini'),
   MANGAE_RECIPE_API_KEY: Joi.string().optional(),
   YOUTUBE_API_KEY: Joi.string().optional(),
   FCM_SERVICE_ACCOUNT_KEY: Joi.string().optional(),

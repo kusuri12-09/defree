@@ -32,6 +32,9 @@ importers:
 
   apps/api:
     dependencies:
+      '@defree/ocr':
+        specifier: workspace:*
+        version: link:../../packages/ocr
       '@defree/shared-types':
         specifier: workspace:*
         version: link:../../packages/shared-types
@@ -232,6 +235,15 @@ importers:
 
   packages/shared-types:
     devDependencies:
+      typescript:
+        specifier: ^5.5.4
+        version: 5.9.3
+
+  packages/ocr:
+    devDependencies:
+      '@types/node':
+        specifier: ^22.7.4
+        version: 22.19.18
       typescript:
         specifier: ^5.5.4
         version: 5.9.3
