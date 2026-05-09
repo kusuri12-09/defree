@@ -1,0 +1,6 @@
+- `[x]` Vite + React 프로젝트 초기화
+- `[x]` 패키지 의존성 설치 및 `shared-types` 연동
+- `[x]` TailwindCSS 설정 (디자인 토큰 적용)
+- `[x]` 폴더 구조 및 라우팅 설정
+- `[x]` 공통 UI 컴포넌트 (Bottom Tab Bar 등) 구현
+- `[x]` 가짜 데이터(Mock) 기반 UI 화면 구현 (전체)
