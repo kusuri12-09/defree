@@ -1,15 +1,33 @@
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
 export const Slide2_Problem = () => {
   const steps = [
-    { step: '과잉 구매', desc: '마트의 대용량 규격', result: '식재료 과부하', width: 'w-full', delay: 0.2 },
-    { step: '망각/방치', desc: '냉장고 속 재료 파악 실패', result: '유통기한 경과', width: 'w-[80%]', delay: 0.4 },
-    { step: '번거로움', desc: '수동 입력의 귀찮음', result: '관리 포기 및 배달 주문', width: 'w-[60%]', delay: 0.6 },
-  ];
+    {
+      step: '과잉 구매',
+      desc: '마트의 대용량 규격',
+      result: '식재료 과부하',
+      width: 'w-full',
+      delay: 0.2,
+    },
+    {
+      step: '망각/방치',
+      desc: '냉장고 속 재료 파악 실패',
+      result: '유통기한 경과',
+      width: 'w-[80%]',
+      delay: 0.4,
+    },
+    {
+      step: '번거로움',
+      desc: '수동 입력의 귀찮음',
+      result: '관리 포기 및 배달 주문',
+      width: 'w-[60%]',
+      delay: 0.6,
+    },
+  ]
 
   return (
     <div className="flex flex-col items-center justify-center max-w-5xl px-8 w-full">
-      <motion.div 
+      <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         className="text-center mb-16"
@@ -21,7 +39,7 @@ export const Slide2_Problem = () => {
 
       <div className="flex flex-col items-center w-full space-y-4">
         {steps.map((item, idx) => (
-          <motion.div 
+          <motion.div
             key={idx}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -40,8 +58,8 @@ export const Slide2_Problem = () => {
             </div>
           </motion.div>
         ))}
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.0 }}
@@ -51,5 +69,5 @@ export const Slide2_Problem = () => {
         </motion.div>
       </div>
     </div>
-  );
-};
+  )
+}

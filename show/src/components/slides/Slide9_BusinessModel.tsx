@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion';
-import { ShoppingBag, LineChart, Users } from 'lucide-react';
+import { motion } from 'framer-motion'
+import { ShoppingBag, LineChart, Users } from 'lucide-react'
 
 export const Slide9_BusinessModel = () => {
   return (
     <div className="flex flex-col items-center justify-center max-w-5xl px-8 w-full">
-      <motion.div 
+      <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         className="text-center mb-16"
@@ -14,7 +14,7 @@ export const Slide9_BusinessModel = () => {
       </motion.div>
 
       <div className="space-y-6 w-full">
-        <motion.div 
+        <motion.div
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -25,11 +25,13 @@ export const Slide9_BusinessModel = () => {
           </div>
           <div className="text-left">
             <h3 className="text-xl font-bold mb-1">커머스 딥링크</h3>
-            <p className="text-slate-400">부족한 재료를 소포장 최저가로 바로 연결 (구매 수수료 수익)</p>
+            <p className="text-slate-400">
+              부족한 재료를 소포장 최저가로 바로 연결 (구매 수수료 수익)
+            </p>
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
@@ -40,11 +42,13 @@ export const Slide9_BusinessModel = () => {
           </div>
           <div className="text-left">
             <h3 className="text-xl font-bold mb-1">데이터 비즈니스</h3>
-            <p className="text-slate-400">1인 가구 식생활 소비 패턴 데이터 분석 및 B2B 인사이트 제공</p>
+            <p className="text-slate-400">
+              1인 가구 식생활 소비 패턴 데이터 분석 및 B2B 인사이트 제공
+            </p>
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.6 }}
@@ -60,5 +64,5 @@ export const Slide9_BusinessModel = () => {
         </motion.div>
       </div>
     </div>
-  );
-};
+  )
+}

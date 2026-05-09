@@ -1,15 +1,16 @@
-import React from 'react';
-import { useAuthStore } from '@/stores/authStore';
-import { useIngredients } from '@/services/useIngredients';
+import React from 'react'
+import { useAuthStore } from '@/stores/authStore'
+import { useIngredients } from '@/services/useIngredients'
 
 export const Home: React.FC = () => {
-  const { user } = useAuthStore();
-  const { data: ingredientsData, isLoading } = useIngredients({ sort: 'expiryDate', order: 'asc' });
-  
-  const expiringIngredients = ingredientsData?.data.filter((item) => {
-    const diff = new Date(item.expiryDate).getTime() - new Date().getTime();
-    return diff <= 3 * 24 * 60 * 60 * 1000; // 3 days
-  }) || [];
+  const { user } = useAuthStore()
+  const { data: ingredientsData, isLoading } = useIngredients({ sort: 'expiryDate', order: 'asc' })
+
+  const expiringIngredients =
+    ingredientsData?.data.filter((item) => {
+      const diff = new Date(item.expiryDate).getTime() - new Date().getTime()
+      return diff <= 3 * 24 * 60 * 60 * 1000 // 3 days
+    }) || []
 
   return (
     <div className="p-4 space-y-6">
@@ -21,10 +22,17 @@ export const Home: React.FC = () => {
       </header>
 
       <section className="bg-primary-light p-4 rounded-xl">
-        <h2 className="text-lg font-semibold text-primary">안녕하세요, {user?.name || '게스트'} 님!</h2>
-        <p className="text-sm text-neutral-500 mt-1">오늘 소비 기한 임박 {expiringIngredients.length}개</p>
+        <h2 className="text-lg font-semibold text-primary">
+          안녕하세요, {user?.name || '게스트'} 님!
+        </h2>
+        <p className="text-sm text-neutral-500 mt-1">
+          오늘 소비 기한 임박 {expiringIngredients.length}개
+        </p>
         {!user && (
-          <a href={`${import.meta.env.VITE_API_URL || 'http://localhost:3000/v1'}/auth/google/login`} className="mt-3 inline-block bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold">
+          <a
+            href={`${import.meta.env.VITE_API_URL || 'http://localhost:3000/v1'}/auth/google/login`}
+            className="mt-3 inline-block bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold"
+          >
             구글로 로그인
           </a>
         )}
@@ -39,16 +47,26 @@ export const Home: React.FC = () => {
         ) : (
           <div className="space-y-2">
             {expiringIngredients.map((item) => (
-              <div key={item.id} className="flex justify-between items-center bg-surface p-3 rounded-xl shadow-sm border border-danger/20">
+              <div
+                key={item.id}
+                className="flex justify-between items-center bg-surface p-3 rounded-xl shadow-sm border border-danger/20"
+              >
                 <div className="flex items-center space-x-3">
                   <span className="text-2xl">{item.category?.iconEmoji || '📦'}</span>
                   <div>
                     <p className="font-medium">{item.name}</p>
-                    <p className="text-xs text-neutral-500">{item.quantity}{item.unit} 남음</p>
+                    <p className="text-xs text-neutral-500">
+                      {item.quantity}
+                      {item.unit} 남음
+                    </p>
                   </div>
                 </div>
                 <span className="px-2 py-1 bg-danger text-white text-xs font-bold rounded-full">
-                  {Math.ceil((new Date(item.expiryDate).getTime() - new Date().getTime()) / (1000 * 3600 * 24))}일 남음
+                  {Math.ceil(
+                    (new Date(item.expiryDate).getTime() - new Date().getTime()) /
+                      (1000 * 3600 * 24),
+                  )}
+                  일 남음
                 </span>
               </div>
             ))}
@@ -61,5 +79,5 @@ export const Home: React.FC = () => {
         <span className="font-bold">영수증 스캔</span>
       </button>
     </div>
-  );
-};
+  )
+}

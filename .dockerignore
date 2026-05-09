@@ -1,0 +1,15 @@
+node_modules
+dist
+.turbo
+.git
+.env
+.env.*
+coverage
+logs
+*.log
+uploads
+tmp
+apps/*/dist
+packages/*/dist
+apps/*/node_modules
+packages/*/node_modules

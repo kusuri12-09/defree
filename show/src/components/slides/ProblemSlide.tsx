@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion';
-import { Trash2, Frown } from 'lucide-react';
+import { motion } from 'framer-motion'
+import { Trash2, Frown } from 'lucide-react'
 
 export const ProblemSlide = () => {
   return (
     <div className="flex flex-col items-center justify-center max-w-5xl px-8 w-full">
-      <motion.div 
+      <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         className="text-center mb-16"
@@ -14,7 +14,7 @@ export const ProblemSlide = () => {
       </motion.div>
 
       <div className="grid md:grid-cols-2 gap-8 w-full">
-        <motion.div 
+        <motion.div
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -23,11 +23,13 @@ export const ProblemSlide = () => {
           <Frown className="w-16 h-16 text-slate-400" />
           <h3 className="text-2xl font-bold">검게 변해가는 애호박</h3>
           <p className="text-slate-400">
-            된장찌개 하나 끓이려고 샀던 채소들,<br/>냉장고 구석에서 썩어갈 때의 죄책감.
+            된장찌개 하나 끓이려고 샀던 채소들,
+            <br />
+            냉장고 구석에서 썩어갈 때의 죄책감.
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
@@ -36,10 +38,12 @@ export const ProblemSlide = () => {
           <Trash2 className="w-16 h-16 text-danger" />
           <h3 className="text-2xl font-bold">남은 식재료 처리</h3>
           <p className="text-slate-400">
-            도대체 남은 양파로 뭘 해야 할지 모름.<br/>결국 배달 음식을 시키고 악순환 반복.
+            도대체 남은 양파로 뭘 해야 할지 모름.
+            <br />
+            결국 배달 음식을 시키고 악순환 반복.
           </p>
         </motion.div>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,13 +1,13 @@
-import { motion } from 'framer-motion';
-import { ArrowRight, XCircle, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion'
+import { ArrowRight, XCircle, CheckCircle2 } from 'lucide-react'
 
 export const Slide3_Solution = () => {
-  const oldSteps = ['마트 장보기', '수동 입력(실패)', '유통기한 망각', '폐기'];
-  const newSteps = ['영수증 스캔', '자동 재고 등록', '맞춤 알림', '1인분 소진'];
+  const oldSteps = ['마트 장보기', '수동 입력(실패)', '유통기한 망각', '폐기']
+  const newSteps = ['영수증 스캔', '자동 재고 등록', '맞춤 알림', '1인분 소진']
 
   return (
     <div className="flex flex-col items-center justify-center max-w-6xl px-4 w-full">
-      <motion.div 
+      <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         className="text-center mb-16"
@@ -19,7 +19,7 @@ export const Slide3_Solution = () => {
 
       <div className="grid md:grid-cols-2 gap-8 w-full">
         {/* 기존 방식 (Red) */}
-        <motion.div 
+        <motion.div
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -29,7 +29,7 @@ export const Slide3_Solution = () => {
             <XCircle className="w-8 h-8 text-danger" />
             <h3 className="text-2xl font-bold text-danger">기존 방식</h3>
           </div>
-          
+
           <div className="space-y-6 relative">
             <div className="absolute left-6 top-6 bottom-6 w-0.5 bg-danger/20 -z-10"></div>
             {oldSteps.map((step, idx) => (
@@ -37,7 +37,9 @@ export const Slide3_Solution = () => {
                 <div className="w-12 h-12 rounded-full bg-dark-900 border-2 border-danger/40 flex items-center justify-center text-slate-400 font-bold z-10">
                   {idx + 1}
                 </div>
-                <div className={`p-4 rounded-xl flex-1 ${idx === 3 ? 'bg-danger/20 border border-danger font-bold text-white' : 'bg-dark-800 text-slate-400'}`}>
+                <div
+                  className={`p-4 rounded-xl flex-1 ${idx === 3 ? 'bg-danger/20 border border-danger font-bold text-white' : 'bg-dark-800 text-slate-400'}`}
+                >
                   {step}
                 </div>
               </div>
@@ -46,7 +48,7 @@ export const Slide3_Solution = () => {
         </motion.div>
 
         {/* defree 방식 (Blue/Primary) */}
-        <motion.div 
+        <motion.div
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
@@ -59,7 +61,7 @@ export const Slide3_Solution = () => {
             <CheckCircle2 className="w-8 h-8 text-primary" />
             <h3 className="text-2xl font-bold text-primary">defree 방식</h3>
           </div>
-          
+
           <div className="space-y-6 relative">
             <div className="absolute left-6 top-6 bottom-6 w-0.5 bg-primary/30 -z-10"></div>
             {newSteps.map((step, idx) => (
@@ -76,5 +78,5 @@ export const Slide3_Solution = () => {
         </motion.div>
       </div>
     </div>
-  );
-};
+  )
+}
