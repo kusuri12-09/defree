@@ -1,15 +1,17 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { MainLayout } from './components/layout/MainLayout';
-import { Home } from './pages/Home';
-import { Inventory } from './pages/Inventory';
-import { Recipes } from './pages/Recipes';
-import { Shopping } from './pages/Shopping';
-import { MyPage } from './pages/MyPage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { MainLayout } from './components/layout/MainLayout'
+import { Home } from './pages/Home'
+import { Inventory } from './pages/Inventory'
+import { Recipes } from './pages/Recipes'
+import { Shopping } from './pages/Shopping'
+import { MyPage } from './pages/MyPage'
+import { AuthCallback } from './pages/AuthCallback'
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/auth/callback" element={<AuthCallback />} />
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="inventory" element={<Inventory />} />
@@ -19,7 +21,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import { BottomTabBar } from './BottomTabBar';
+import React from 'react'
+import { Outlet } from 'react-router-dom'
+import { BottomTabBar } from './BottomTabBar'
 
 export const MainLayout: React.FC = () => {
   return (
@@ -10,5 +10,5 @@ export const MainLayout: React.FC = () => {
       </main>
       <BottomTabBar />
     </div>
-  );
-};
+  )
+}

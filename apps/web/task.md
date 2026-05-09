@@ -4,3 +4,13 @@
 - `[x]` 폴더 구조 및 라우팅 설정
 - `[x]` 공통 UI 컴포넌트 (Bottom Tab Bar 등) 구현
 - `[x]` 가짜 데이터(Mock) 기반 UI 화면 구현 (전체)
+- `[x]` 환경 변수(.env) 설정
+- `[x]` Axios 인스턴스 및 인터셉터 구성 (`api.ts`)
+- `[x]` Zustand 인증 상태 스토어 구현 (`authStore.ts`)
+- `[x]` OAuth 콜백 라우트 구현 (`AuthCallback.tsx`)
+- `[x]` 도메인별 React Query 커스텀 훅 구현 (`useIngredients`, `useRecipes` 등)
+- `[x]` 홈 (SCR-02) API 데이터 바인딩
+- `[x]` 냉장고 (SCR-05) API 데이터 바인딩
+- `[x]` 레시피 (SCR-08) API 데이터 바인딩
+- `[x]` 장바구니 (SCR-10) API 데이터 바인딩
+- `[x]` 마이페이지 (SCR-12) API 데이터 바인딩

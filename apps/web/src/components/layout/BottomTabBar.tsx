@@ -1,7 +1,7 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Home, Refrigerator, ChefHat, ShoppingCart, User } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { Home, Refrigerator, ChefHat, ShoppingCart, User } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 export const BottomTabBar: React.FC = () => {
   const tabs = [
@@ -10,7 +10,7 @@ export const BottomTabBar: React.FC = () => {
     { name: '레시피', path: '/recipes', icon: ChefHat },
     { name: '장보기', path: '/shopping', icon: ShoppingCart },
     { name: '마이', path: '/mypage', icon: User },
-  ];
+  ]
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-surface border-t border-neutral-100 z-50">
@@ -22,7 +22,7 @@ export const BottomTabBar: React.FC = () => {
               className={({ isActive }) =>
                 cn(
                   'flex flex-col items-center justify-center h-full w-full space-y-1',
-                  isActive ? 'text-primary' : 'text-neutral-500 hover:text-neutral-900'
+                  isActive ? 'text-primary' : 'text-neutral-500 hover:text-neutral-900',
                 )
               }
             >
@@ -33,5 +33,5 @@ export const BottomTabBar: React.FC = () => {
         ))}
       </ul>
     </nav>
-  );
-};
+  )
+}
