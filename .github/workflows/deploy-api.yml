@@ -59,6 +59,7 @@ jobs:
     env:
       DEPLOY_PATH: ${{ secrets.EC2_DEPLOY_PATH || '/opt/defree' }}
       SSH_PORT: ${{ secrets.EC2_PORT || '22' }}
+      PROD_ENV_FILE: ${{ secrets.PROD_ENV_FILE }}
 
     steps:
       - name: Checkout
@@ -69,7 +70,6 @@ jobs:
           EC2_HOST: ${{ secrets.EC2_HOST }}
           EC2_USER: ${{ secrets.EC2_USER }}
           EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
-          PROD_ENV_FILE: ${{ secrets.PROD_ENV_FILE }}
         run: |
           test -n "$EC2_HOST"
           test -n "$EC2_USER"
@@ -88,13 +88,12 @@ jobs:
           ssh-keyscan -p "$SSH_PORT" "$EC2_HOST" >> ~/.ssh/known_hosts
 
       - name: Create release archive
-        env:
-          PROD_ENV_FILE: ${{ secrets.PROD_ENV_FILE }}
         run: |
-          printf '%s\n' "$PROD_ENV_FILE" > .env
           tar \
             --exclude='.git' \
             --exclude='.github' \
+            --exclude='.env' \
+            --exclude='.env.*' \
             --exclude='node_modules' \
             --exclude='dist' \
             --exclude='.turbo' \
@@ -111,6 +110,14 @@ jobs:
           ssh -i ~/.ssh/ec2_key -p "$SSH_PORT" "$EC2_USER@$EC2_HOST" "mkdir -p '$DEPLOY_PATH'"
           scp -i ~/.ssh/ec2_key -P "$SSH_PORT" release.tar.gz "$EC2_USER@$EC2_HOST:/tmp/defree-release.tar.gz"
           ssh -i ~/.ssh/ec2_key -p "$SSH_PORT" "$EC2_USER@$EC2_HOST" "tar -xzf /tmp/defree-release.tar.gz -C '$DEPLOY_PATH' && rm /tmp/defree-release.tar.gz"
+
+      - name: Write production env file
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+        run: |
+          printf '%s\n' "$PROD_ENV_FILE" | ssh -i ~/.ssh/ec2_key -p "$SSH_PORT" "$EC2_USER@$EC2_HOST" "cat > '$DEPLOY_PATH/.env'"
+          ssh -i ~/.ssh/ec2_key -p "$SSH_PORT" "$EC2_USER@$EC2_HOST" "chmod 600 '$DEPLOY_PATH/.env'"
 
       - name: Start containers
         env:
