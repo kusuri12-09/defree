@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ChefHat, BellRing, Utensils, Scan } from 'lucide-react'
+import { BellRing, Utensils, Scan } from 'lucide-react'
 
 export const Slide1_Title = () => {
   return (

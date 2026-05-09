@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, XCircle, CheckCircle2 } from 'lucide-react'
+import { XCircle, CheckCircle2 } from 'lucide-react'
 
 export const Slide3_Solution = () => {
   const oldSteps = ['마트 장보기', '수동 입력(실패)', '유통기한 망각', '폐기']
