@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Bash(git diff*)",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(find*)"
+    ],
+    "deny": [
+      "Bash(git push*)",
+      "Bash(rm -rf*)"
+    ]
+  },
+  "language": "korean",
+  "effortLevel": "medium",
+  "includeGitInstructions": false
+}
